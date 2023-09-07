@@ -38,21 +38,6 @@ BitcoinNode::GetTypeId (void)
                    AddressValue (),
                    MakeAddressAccessor (&BitcoinNode::m_local),
                    MakeAddressChecker ())
-    .AddAttribute ("Protocol",
-                   "The type id of the protocol to use for the rx socket.",
-                   TypeIdValue (UdpSocketFactory::GetTypeId ()),
-                   MakeTypeIdAccessor (&BitcoinNode::m_tid),
-                   MakeTypeIdChecker ())
-    .AddAttribute ("BlockTorrent",
-                   "Enable the BlockTorrent protocol",
-                   BooleanValue (false),
-                   MakeBooleanAccessor (&BitcoinNode::m_blockTorrent),
-                   MakeBooleanChecker ())
-    .AddAttribute ("SPV",
-                   "Enable SPV Mechanism",
-                   BooleanValue (false),
-                   MakeBooleanAccessor (&BitcoinNode::m_spv),
-                   MakeBooleanChecker ())
     .AddAttribute ("InvTimeoutMinutes", 
 				   "The timeout of inv messages in minutes",
                    TimeValue (Minutes (20)),
